@@ -109,10 +109,11 @@ nmap <F7> :NERDTreeToggle<CR>
 "let g:solarized_termcolors=256
 
 set background=dark
-colorscheme solarized
+"colorscheme solarized
 
 
 set number
+set relativenumber
 syntax on
 set ruler
 set mouse=a
@@ -135,4 +136,7 @@ let g:ycm_server_keep_logfiles = 1
 
 set re=1
 set timeoutlen=1000 ttimeoutlen=10
+
+
+let g:python_host_prog = '/usr/local/bin/python'
 
