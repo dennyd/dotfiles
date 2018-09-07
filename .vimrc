@@ -1,5 +1,4 @@
 
-
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -92,6 +91,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_enable_fugitive=1
 let g:airline_enable_syntastic=1
 let g:airline_enable_bufferline=1
+let g:airline_theme='deus'
 
 
 set laststatus=2
@@ -105,10 +105,10 @@ nmap <F8> :TagbarToggle<CR>
 nmap <F7> :NERDTreeToggle<CR>
 """""""""""""""""""""""""""""
 
-"let g:solarized_termcolors=256
+let g:solarized_termcolors=256
 
 set background=dark
-colorscheme solarized
+"colorscheme solarized
 
 
 set number
@@ -125,6 +125,8 @@ set backspace=indent,eol,start
 "set whichwrap+=h,l
 set hlsearch
 set tabstop=4
+set shiftwidth=4
+set expandtab
 set ic      " case insessitive search
 set noswapfile
 let g:ycm_server_keep_logfiles = 1
