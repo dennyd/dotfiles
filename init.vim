@@ -204,10 +204,15 @@ let g:go_metalinter_autosave = 1
 let g:go_metalinter_autosave_enabled = ['vet', 'golint', 'errcheck']
 
 
+let b:ale_fixers = ['prettier', 'eslint']
+
+
 " JS Prettier
 let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
+"autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
 
-" remap ctrl-p to use fzf instead
+
+
+" remap ctrl-p to use fzf instead of ctrlp
 nnoremap <c-p> :FZF<cr>
 
