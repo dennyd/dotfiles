@@ -1,4 +1,5 @@
 
+set shell=bash
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -67,6 +68,8 @@ Plugin 'fatih/vim-go'
 
 
 "Plugin 'altercation/vim-colors-solarized'
+"
+Plugin 'vifm/vifm' "file manager
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -142,9 +145,10 @@ set laststatus=2
 
 
 """""""""""""""""""""""""""""  KEYBINDINGS
+
 nmap <F8> :TagbarToggle<CR>
 nmap <F7> :NERDTreeToggle<CR>
-"""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""
 
 "let g:solarized_termcolors=256
 
@@ -180,7 +184,10 @@ set re=1
 set timeoutlen=1000 ttimeoutlen=10
 
 
-let g:python_host_prog = '/usr/local/bin/python'
+"let g:python_host_prog = '/usr/local/bin/python'
+"let g:python_host_prog = '/usr/local/bin/python'
+let g:python_host_prog = '/usr/local/bin/python2'
+
 
 " make ack not to go to the first result by default
 cnoreabbrev Ack Ack!
@@ -200,8 +207,10 @@ set omnifunc=syntaxcomplete#Complete
 let g:vimwiki_list = [{'path': '~/vimwiki/', 'auto_tags': 1}]
 
 " GOLANG
-let g:go_metalinter_autosave = 1
-let g:go_metalinter_autosave_enabled = ['vet', 'golint', 'errcheck']
+"let g:go_metalinter_autosave = 1
+"let g:go_metalinter_autosave_enabled = ['vet', 'golint', 'errcheck']
+"let g:go_metalinter_autosave_enabled = ['vet', 'golint']
+"let g:go_metalinter_autosave_enabled = ['golint']
 
 
 let b:ale_fixers = ['prettier', 'eslint']
@@ -212,7 +221,5 @@ let g:prettier#autoformat = 0
 "autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
 
 
-
-" remap ctrl-p to use fzf instead of ctrlp
+" remap ctrl-p to use fzf instead of ctrlp"
 nnoremap <c-p> :FZF<cr>
-
