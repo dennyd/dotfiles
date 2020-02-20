@@ -1,0 +1,14 @@
+---
+name: idw-plugin
+project_root: "~/Projects/idward/idw-k8s/idw-plugin"
+windows:
+  - skaffold:
+      panes:
+      - git status; echo '---------------'; echo 'SKAFFOLD' ;skaffold version 
+  - editor:
+      panes:
+      - nvim -c "NERDTree"
+  - git:
+      panes:
+      - git status 
+

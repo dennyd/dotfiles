@@ -1,0 +1,17 @@
+---
+name: idw-metrics-api
+project_root: "~/Projects/idward/idw-k8s/idw-metrics-api"
+windows:
+  - skaffold:
+      panes:
+      - git status; echo '---------------'; echo 'SKAFFOLD' ;skaffold version 
+  - editor:
+      panes:
+      - nvim -c "NERDTree"
+  - stern:
+      panes:
+      - stern metrics-api --since 30s
+  - git:
+      panes:
+      - git status 
+

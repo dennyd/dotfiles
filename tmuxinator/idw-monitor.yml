@@ -1,0 +1,25 @@
+---
+name: idw-monitor
+project_root: "~/Projects/idward/idw-k8s"
+windows:
+  - k8s-watch:
+      layout: 71b8,270x70,0,0{117x70,0,0,0,152x70,118,0[152x16,118,0,6,152x53,118,17,7]} 
+      panes:
+        - watch kubectl get nodes,deployments,pods 
+        - watch kubectl top nodes
+        - watch kubectl top pods
+  - log-auth-api:
+      panes:
+        - stern auth-api --since 1s
+  - log-metrics-api:
+      panes:
+        - stern metrics-api --since 1s
+  - log-hydra:
+      panes:
+        - stern hydra --since 1s
+  - log-data-insights:
+      panes:
+        - stern data-insights --since 1s
+  - log-web-front:
+      panes:
+        - stern web-front --since 1s

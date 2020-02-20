@@ -1,0 +1,8 @@
+# /Users/dennyd/.config/tmuxinator/sys.yml
+
+name: sys
+root: ~/
+
+
+windows:
+  - editor: nvim 

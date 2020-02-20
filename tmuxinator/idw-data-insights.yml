@@ -1,0 +1,17 @@
+---
+name: idw-data-insights
+project_root: "~/Projects/idward/idw-k8s/idw-data-insights"
+windows:
+  - skaffold:
+      panes:
+      - git status; echo '---------------'; echo 'SKAFFOLD' ;skaffold version 
+  - editor:
+      panes:
+      - nvim -c "NERDTree"
+  - stern:
+      panes:
+      - stern data-insights --since 30s 
+  - git:
+      panes:
+      - git status 
+

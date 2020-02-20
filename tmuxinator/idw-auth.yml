@@ -1,0 +1,17 @@
+---
+name: idw-auth
+project_root: "~/Projects/idward/idw-k8s/idw-auth-api"
+windows:
+  - skaffold:
+      panes:
+      - git status; echo '---------------'; echo 'SKAFFOLD' ;skaffold version 
+  - editor:
+      panes:
+      - nvim -c "NERDTree"
+  - stern:
+      panes:
+      - stern auth-api --since 30s 
+  - git:
+      panes:
+      - git status 
+
