@@ -7,6 +7,8 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 Plug 'scrooloose/nerdcommenter'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'SirVer/ultisnips'
 call plug#end()
 
 
@@ -26,6 +28,12 @@ cnoreabbrev Ack Ack!
 if executable('ag')
   let g:ackprg = 'ag --vimgrep -U --ignore="*.css" --ignore="*-lock.json" --ignore="*.html" --ignore="node_modules" '
 endif
+" go
+"let g:go_highlight_functions = 1
+autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4 
+let g:go_metalinter_autosave = 1
+
+
 
 
 
@@ -70,5 +78,4 @@ let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
 ":hi LineNr ctermbg=Red
 :hi VertSplit ctermbg=Blue ctermfg=Black
-
 
