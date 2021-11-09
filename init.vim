@@ -10,6 +10,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'SirVer/ultisnips'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'github/copilot.vim'
 call plug#end()
 
 
