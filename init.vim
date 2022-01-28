@@ -38,18 +38,28 @@ let g:go_def_mapping_enabled = 0 " use coc instead
 let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
 
+let g:go_fmt_command="gopls"
+let g:go_gopls_gofumpt=1
+
 
 "let g:go_highlight_functions = 1
+
+
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4 
+"let g:go_metalinter_command = "golangci-lint --exclude-use-default"
 let g:go_metalinter_command = "golangci-lint"
-let g:go_metalinter_autosave = 1
+let g:go_metalinter_autosave = 0
+
+" We need empty val when we have .golangci config file in repo
+let g:go_metalinter_autosave_enabled = []
+let g:go_metalinter_enabled = []
+
 "let g:go_metalinter_autosave_enabled = ['vet', 'errcheck']
+"let g:go_metalinter_autosave_enabled = [ 'vet',  'errcheck', 'gocritic', 'gosimple', 'deadcode', 'ineffassign']
 
-let g:go_metalinter_autosave_enabled = [ 'vet',  'errcheck', 'gocritic', 'gosimple', 'deadcode', 'ineffassign']
+"let g:go_metalinter_enabled = ['misspell', 'gomnd', 'vet',  'errcheck', 'gocritic', 'gosimple', 'deadcode', 'ineffassign', 'staticcheck', 'structcheck', 'typecheck', 'unused', 'varcheck', 'asciicheck', 'bodyclose', 'contextcheck', 'durationcheck', 'exhaustive', 'exportloopref', 'gosec', 'misspell' ]
 
-let g:go_metalinter_enabled = ['misspell', 'gomnd', 'vet',  'errcheck', 'gocritic', 'gosimple', 'deadcode', 'ineffassign', 'staticcheck', 'structcheck', 'typecheck', 'unused', 'varcheck', 'asciicheck', 'bodyclose', 'contextcheck', 'durationcheck', 'exhaustive', 'exportloopref', 'gosec', 'misspell' ]
-
-
+autocmd FileType go nmap <leader>gl :GoMetaLinter --exclude-use-default<CR>
 
 let g:go_list_type = 'quickfix'
 
@@ -84,7 +94,7 @@ set scrolloff=8
 
 set ic " case insensative search
 "set background=light
-colorscheme delek
+"colorscheme delek
 "set t_Co=256
 "set termguicolors " 
 let mapleader=" "
@@ -157,6 +167,3 @@ function! s:show_documentation()
     execute '!' . &keywordprg . " " . expand('<cword>')
   endif
 endfunction
-
-
-
