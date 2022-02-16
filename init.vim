@@ -1,4 +1,3 @@
-" === PLUGINS
 "
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
@@ -117,17 +116,35 @@ let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
 " === STYLE
 "
-:hi TabLineFill ctermfg=Black ctermbg=DarkGreen
-:hi TabLine ctermfg=Gray ctermbg=Black
-:hi TabLineSel ctermfg=Red ctermbg=Black
-:hi Title ctermfg=Gray ctermbg=Black
-":hi StatusLine ctermbg=DarkCyan "ctermfg=DarkBlue
-" Split line
-":set fillchars+=vert:| 
-:set fillchars+=vert:│
+:hi TabLineFill ctermfg=Black ctermbg=DarkGreen " tab line
+:hi TabLine ctermfg=Gray ctermbg=Black " tab line
+:hi Title ctermfg=Gray ctermbg=Black  " number next to file
+":hi TabLineSel ctermfg=Red ctermbg=Black
+"" Split line
+"":set fillchars+=vert:| 
+":set fillchars+=vert:│
 
 ":hi LineNr ctermbg=Red
 :hi VertSplit ctermbg=Blue ctermfg=Black
+
+
+":hi StatusLineSel ctermbg=DarkCyan ctermfg=DarkBlue
+":hi statusline guibg=Purple ctermfg=5 guifg=Black ctermbg=0
+":hi statusline guibg=Purple ctermfg=4 guifg=Black ctermbg=0
+:hi statuslineNC guibg=Purple  guifg=Purple ctermbg=0 ctermfg=8
+:hi statusline guibg=Purple  guifg=Purple ctermbg=0 ctermfg=4
+"set laststatus=0
+set statusline=
+"set statusline+=%#PmenuSel#
+"set statusline+=%#CursorColumn#
+"set statusline+=%#LineNr#
+"set statusline+=%#0
+set statusline+=\ %f
+"set statusline+=%m\
+set statusline+=%=
+set statusline+=\ %y
+set statusline+=\ %p%%
+set statusline+=\ 
 
 
 
